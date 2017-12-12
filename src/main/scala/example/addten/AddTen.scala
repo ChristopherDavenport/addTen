@@ -18,8 +18,8 @@ object AddTen {
 
   trait AddTenInstances {
     implicit def addTenInst[A]: AddTen[A] = AddTen[A]
-    implicit class AddTenInst[A](a: A)(implicit A: AddTen[A], E: Enumerated[A]){
-      def addTen: Option[Int] = A.addTen(a)
+    implicit class AddTenInst[A](a: A)(implicit A: AddTen[A]){
+      def addTen(implicit E: Enumerated[A]): Option[Int] = A.addTen(a)
     }
   }
 
