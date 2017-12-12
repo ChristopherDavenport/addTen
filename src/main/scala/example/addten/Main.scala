@@ -13,4 +13,6 @@ object Main {
     println(Int.MinValue.addTen)
   }
 
+  def f[A: AddTen : Enumerated](addMe: A): Option[Int] = addMe.addTen
+
 }
